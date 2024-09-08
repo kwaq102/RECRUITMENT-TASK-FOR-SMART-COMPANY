@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { User } from "../Types/types";
 
 interface Props {
@@ -11,8 +10,10 @@ const TableSingleUser = ({ user, no }: Props) => {
 
 	return (
 		<>
-			<tr>
-				<td>{no}</td>
+			<tr className="tableUsers__body__row">
+				<th className="tableUsers__body__cell tableUsers__body__cell-- header">
+					{no}
+				</th>
 				<td>{username}</td>
 				<td>{name}</td>
 				<td>{email}</td>
