@@ -5,14 +5,11 @@ interface Props {
 
 const InputFilter = ({ handleFilter, placeholder }: Props) => {
 	return (
-		<>
-			<input
-				className="tableUsers__head__row__input"
-				type="text"
-				placeholder={placeholder}
-				onChange={handleFilter}
-			/>
-		</>
+		<input
+			className="tableUsers__head__row__input"
+			type="text"
+			onChange={handleFilter}
+		/>
 	);
 };
 

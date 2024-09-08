@@ -1,0 +1,27 @@
+.usersPage {
+}
+
+// TODO jak będzie czas i pomysł to zrobić jakiś header z fajną graiką
+.usersPage__heading {
+	position: relative;
+	width: fit-content;
+	margin: 1.5em auto;
+	font-size: 3.2rem;
+	color: white;
+	letter-spacing: 1px;
+	font-weight: 400;
+
+	&::before {
+		position: absolute;
+		bottom: -0.2em;
+		left: 0;
+		width: 50px;
+		height: 3px;
+		background-color: #bb2020;
+		content: "";
+	}
+
+	span {
+		font-weight: 900;
+	}
+}

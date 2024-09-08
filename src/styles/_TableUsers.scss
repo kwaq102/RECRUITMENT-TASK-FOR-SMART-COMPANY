@@ -1,0 +1,57 @@
+.tableUsers__wrapper {
+	@include shadow;
+	margin: 20px;
+	overflow-x: auto;
+	user-select: none;
+}
+
+.tableUsers {
+	position: relative;
+	display: table;
+	width: 100%;
+	background-color: #50515a;
+	border-collapse: collapse;
+	color: #fff;
+}
+
+.tableUsers__head {
+	font-weight: 700;
+	font-size: 1.6rem;
+	background-color: #292929;
+}
+
+.tableUsers__head__row__cell {
+	position: relative;
+	height: 80px;
+	min-width: 250px;
+	padding: 0.5em 1em;
+
+	&:nth-of-type(1) {
+		@include sticky;
+		min-width: auto;
+		border-right: 1px solid #292929; //TODO Broder right 3 razy się powtazra np. .cell-borderdRight
+		background-color: #363636;
+	}
+}
+
+.tableUsers__body__cell--header {
+	@include sticky;
+	display: block;
+	padding: 0.4em 0.8em;
+	background-color: #50515a;
+	border-right: 1px solid #292929;
+}
+
+.tableUsers__body__row:nth-of-type(2n) {
+	background-color: #363636;
+}
+
+.tableUsers__body__row:nth-of-type(2n) .tableUsers__body__cell--header {
+	background-color: #363636;
+}
+
+.tableUsers__body__cell {
+	padding: 0.8em 1em;
+	font-size: 1.4rem;
+	border-right: 1px solid #292929;
+}

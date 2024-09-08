@@ -11,13 +11,13 @@ const TableSingleUser = ({ user, no }: Props) => {
 	return (
 		<>
 			<tr className="tableUsers__body__row">
-				<th className="tableUsers__body__cell tableUsers__body__cell-- header">
+				<th className="tableUsers__body__cell tableUsers__body__cell--header">
 					{no}
 				</th>
-				<td>{username}</td>
-				<td>{name}</td>
-				<td>{email}</td>
-				<td>{phone}</td>
+				<td className="tableUsers__body__cell">{username}</td>
+				<td className="tableUsers__body__cell">{name}</td>
+				<td className="tableUsers__body__cell">{email}</td>
+				<td className="tableUsers__body__cell">{phone}</td>
 			</tr>
 		</>
 	);

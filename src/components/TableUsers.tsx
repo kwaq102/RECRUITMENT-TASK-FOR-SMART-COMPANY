@@ -54,41 +54,42 @@ const TableUsers = () => {
 		dispatch(setFilterPhone(e.target.value));
 	};
 
+	const usersGenerate = () =>
+		users.map((user, i) => {
+			// TODO poszukać rozwiązania na wyświetlenie informacji że brak wyników... gdzieś poszukać info ze statu o braku useróws
+			return <TableSingleUser user={user} no={i + 1} key={user.id} />;
+		});
 	return (
-		<>
+		<div className="tableUsers__wrapper">
 			<table className="tableUsers">
 				<thead className="tableUsers__head">
 					<tr className="tableUsers__head__row">
 						<TableHeadUser text="No." />
 						<TableHeadUser
 							text="Name"
-							placeholder="Filter by Name"
+							placeholder="Search nick"
 							handleFilter={handleNameFilterChange}
 						/>
 						<TableHeadUser
 							text="User Name"
-							placeholder="Filter by User Name"
+							placeholder="Search User Name"
 							handleFilter={handleUserNameFilterChange}
 						/>
 						<TableHeadUser
 							text="Email"
-							placeholder="Filter by email"
+							placeholder="Search email"
 							handleFilter={handleEmailFilterChange}
 						/>
 						<TableHeadUser
 							text="Phone"
-							placeholder="Filter by phone"
+							placeholder="Search phone"
 							handleFilter={handlePhoneFilterChange}
 						/>
 					</tr>
 				</thead>
-				<tbody className="tableUsers__body">
-					{users.map((user, i) => (
-						<TableSingleUser user={user} no={i + 1} key={user.id} />
-					))}
-				</tbody>
+				<tbody className="tableUsers__body">{usersGenerate()}</tbody>
 			</table>
-		</>
+		</div>
 	);
 };
 
