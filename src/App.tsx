@@ -3,14 +3,14 @@ import "./styles/index.scss";
 import { store } from "./redux/store/store";
 import { Test } from "./Test";
 import { UsersPage } from "./components/UsersPage";
+import { Footer } from "./components/Footer";
 
 const App = () => {
 	return (
 		<Provider store={store}>
-			<div className="App">
-				{/* <Test /> */}
-				<UsersPage />
-			</div>
+			{/* <Test /> */}
+			<UsersPage />
+			<Footer />
 		</Provider>
 	);
 };
