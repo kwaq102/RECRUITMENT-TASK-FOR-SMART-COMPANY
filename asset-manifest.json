@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/RECRUITMENT-TASK-FOR-SMART-COMPANY/static/css/main.70c35767.css",
+    "main.js": "/RECRUITMENT-TASK-FOR-SMART-COMPANY/static/js/main.f4020d08.js",
+    "static/media/nightCity_1920.jpg": "/RECRUITMENT-TASK-FOR-SMART-COMPANY/static/media/nightCity_1920.a0db96a61ee553e303d5.jpg",
+    "static/media/nightCity_1200.jpg": "/RECRUITMENT-TASK-FOR-SMART-COMPANY/static/media/nightCity_1200.29f5cd7dd2c7285d7954.jpg",
+    "static/media/nightCity_500.jpg": "/RECRUITMENT-TASK-FOR-SMART-COMPANY/static/media/nightCity_500.f8823b8a908b74b3d4bb.jpg",
+    "index.html": "/RECRUITMENT-TASK-FOR-SMART-COMPANY/index.html",
+    "main.70c35767.css.map": "/RECRUITMENT-TASK-FOR-SMART-COMPANY/static/css/main.70c35767.css.map",
+    "main.f4020d08.js.map": "/RECRUITMENT-TASK-FOR-SMART-COMPANY/static/js/main.f4020d08.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.70c35767.css",
+    "static/js/main.f4020d08.js"
+  ]
+}
