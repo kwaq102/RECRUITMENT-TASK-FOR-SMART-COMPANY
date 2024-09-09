@@ -1,8 +1,11 @@
 // COLORS
-$gold: #d6c78e;
-$darkgold: #9b9165;
 
 $red: #bb2020;
 
-$blue: #2483ff;
-$blueDarker: #2c6afb;
+// CONTENT WIDTH BREAKPOINTS
+
+$breakpoints: (
+	m: 768px,
+	l: 992px,
+	xl: 1200px,
+);

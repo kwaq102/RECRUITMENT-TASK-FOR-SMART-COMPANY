@@ -2,17 +2,18 @@
 	background-image: url("../images/nightCity_500.jpg");
 	background-size: cover;
 }
+
 .footer__content {
 	display: grid;
-	grid-template-columns: repeat(1fr, 1fr);
-	grid-template-rows: repeat(1fr, 1fr);
-	row-gap: 7em;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	row-gap: 3em;
 	padding: 5em 0;
-	justify-content: center;
 	align-items: center;
 	min-height: 200px;
 	background-color: rgba(0, 0, 0, 0.6);
 }
+
 .footer__content__heading {
 	position: relative;
 	margin: 0 auto;
@@ -42,7 +43,14 @@
 }
 
 .footer__content__contact {
+	grid-column: 1/-1;
+	grid-row: 2/3;
 	flex-direction: column;
+}
+
+.footer__content__socials {
+	grid-column: 1/-1;
+	grid-row: 3/4;
 }
 
 .footer__content__contact__text {
@@ -83,4 +91,60 @@
 	background-color: #2e2e2e;
 	font-size: 1.6rem;
 	text-align: center;
+}
+
+@media screen and (min-width: map-get($breakpoints, m)) {
+	.footer {
+		background-image: url("../images/nightCity_1200.jpg");
+	}
+
+	.footer__content {
+		grid-template-rows: repeat(2, 1fr);
+	}
+
+	.footer__content__contact {
+		align-self: flex-start;
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+
+	.footer__content__socials {
+		align-self: flex-start;
+		grid-column: 2/3;
+		grid-row: 2/3;
+	}
+}
+
+@media screen and (min-width: map-get($breakpoints, l)) {
+	.footer__content__heading {
+		font-size: 3.2rem;
+	}
+
+	.footer__content__heading--contact,
+	.footer__content__heading--socials {
+		font-size: 2.7rem;
+	}
+
+	.footer__content {
+		grid-template-rows: 100px 1fr;
+		column-gap: 5em;
+	}
+
+	.footer__content__contact,
+	.footer__content__socials {
+		width: 300px;
+	}
+
+	.footer__content__contact {
+		margin-left: auto;
+	}
+	.footer__content__contact__text {
+		font-size: 1.8rem;
+	}
+}
+@media screen and (min-width: map-get($breakpoints, xl)) {
+	.footer {
+		background-image: url("../images/nightCity_1920.jpg");
+		background-position: center;
+	}
 }

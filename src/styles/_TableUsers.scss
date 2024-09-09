@@ -2,16 +2,13 @@
 	@include shadow;
 	margin: 20px;
 	overflow-x: auto;
-	user-select: none;
 }
 
 .tableUsers {
 	position: relative;
-	display: table;
 	width: 100%;
 	background-color: #50515a;
 	border-collapse: collapse;
-	// color: #fff;
 }
 
 .tableUsers__head {
@@ -54,4 +51,19 @@
 	padding: 0.8em 1em;
 	font-size: 1.4rem;
 	border-right: 1px solid #292929;
+}
+
+@media screen and (min-width: map-get($breakpoints, l)) {
+	.tableUsers__wrapper {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.tableUsers__head {
+		font-size: 1.8rem;
+	}
+
+	.tableUsers__body__cell {
+		font-size: 1.6rem;
+	}
 }

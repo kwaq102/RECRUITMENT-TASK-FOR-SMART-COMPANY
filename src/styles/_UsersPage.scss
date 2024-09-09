@@ -1,4 +1,5 @@
 .usersPage {
+	min-height: 50vh;
 	margin: 7em 0;
 }
 
@@ -23,5 +24,11 @@
 
 	span {
 		font-weight: 900;
+	}
+}
+
+@media screen and (min-width: map-get($breakpoints, l)) {
+	.usersPage__heading {
+		font-size: 3.5rem;
 	}
 }
