@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../redux/store/store";
+import { AppDispatch, RootState } from "../redux/store/store";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import {
 	fetchUsers,
+	fetchUsersFail,
+	fetchUsersSuccess,
 	filteredUsers,
 	setFilterEmail,
 	setFilterNameNick,
@@ -17,16 +19,18 @@ import { TableHeadUser } from "./TableHeadUser";
 const TableUsers = () => {
 	const dispatch: AppDispatch = useDispatch();
 	const users = useSelector(filteredUsers);
+	const loading = useSelector((state: RootState) => state.users.loading);
+	const error = useSelector((state: RootState) => state.users.error);
 
 	const getUsers = async () => {
 		try {
+			dispatch(fetchUsers());
 			const res = await axios.get("https://jsonplaceholder.typicode.com/users");
 			const data = await res.data;
-
-			dispatch(fetchUsers(data));
+			dispatch(fetchUsersSuccess(data));
 		} catch (e) {
-			console.log("błąd");
-			console.log(e);
+			console.log(error);
+			dispatch(fetchUsersFail("Error"));
 			// TODO oagarnąć obługę błędów w axios
 		}
 	};
@@ -87,7 +91,10 @@ const TableUsers = () => {
 						/>
 					</tr>
 				</thead>
-				<tbody className="tableUsers__body">{usersGenerate()}</tbody>
+				<tbody className="tableUsers__body">
+					{loading ? <p>Ładowanie...</p> : usersGenerate()}
+					{error && <p>ERROR</p>}
+				</tbody>
 			</table>
 		</div>
 	);

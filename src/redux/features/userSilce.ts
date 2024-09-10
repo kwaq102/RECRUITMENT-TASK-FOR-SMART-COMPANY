@@ -1,35 +1,35 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { User } from '../../Types/types';
+import { User, UsersState } from '../../Types/types';
 import { RootState } from '../store/store';
 
 
-// TODO to przenieść do typów
-// Typ stanu
-
-interface UserState {
-    users: User[];
-    filterNameNick: string;
-    filterUserName: string;
-    filterEmail: string;
-    filterPhone: string;
-}
-
-// Stan początkowy
-const initialState: UserState = {
+const initialState: UsersState = {
     users: [],
     filterNameNick: '',
     filterUserName: '',
     filterEmail: '',
     filterPhone: '',
+    loading: false,
+    error: null,
 };
 
-// Slice
 const userSlice = createSlice({
     name: 'users',
     initialState,
     reducers: {
-        fetchUsers(state, action: PayloadAction<User[]>) {
+        fetchUsers(state) {
+            state.loading = true;
+            state.error = null;
+        },
+
+        fetchUsersSuccess(state, action: PayloadAction<User[]>) {
             state.users = action.payload;
+            state.loading = false;
+        },
+
+        fetchUsersFail(state, action: PayloadAction<string>) {
+            state.error = action.payload;
+            state.loading = false;
         },
 
         setFilterNameNick(state, action: PayloadAction<string>) {
@@ -47,31 +47,13 @@ const userSlice = createSlice({
         setFilterPhone(state, action: PayloadAction<string>) {
             state.filterPhone = action.payload;
         }
-
-        // fetchUsersSuccess(state, action: PayloadAction<User[]>) {
-        //     state.users = action.payload;
-        // },
-        // fetchUsersSuccess(state, action: PayloadAction<User[]>) {
-        //     state.users = action.payload;
-        //     state.loading = false;
-        // },
-        // fetchUsersFailure(state, action: PayloadAction<string>) {
-        //     state.error = action.payload;
-        //     state.loading = false;
-        // },
-
-
     },
 });
 
-// Eksportuj akcje
-export const { fetchUsers, setFilterNameNick, setFilterEmail, setFilterPhone, setFilterUserName } = userSlice.actions;
+export const { fetchUsers, fetchUsersSuccess, fetchUsersFail, setFilterNameNick, setFilterEmail, setFilterPhone, setFilterUserName } = userSlice.actions;
 
-// Eksportuj reducer
 export default userSlice.reducer;
 
-
-// Dodajemy funkcję selektora, która zwróci przefiltrowane elementy użytkowników
 export const filteredUsers = (state: RootState) => {
     const { users, filterNameNick, filterUserName, filterEmail, filterPhone } = state.users;
 

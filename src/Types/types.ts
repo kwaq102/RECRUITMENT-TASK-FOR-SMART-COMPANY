@@ -10,6 +10,13 @@ export interface Users {
     users: User[];
 }
 
-// export interface UserState {
-//     users: User[];
-// }
+export interface UsersState {
+    users: User[];
+    filterNameNick: string;
+    filterUserName: string;
+    filterEmail: string;
+    filterPhone: string;
+    loading: boolean;
+    error: string | null;
+}
+
