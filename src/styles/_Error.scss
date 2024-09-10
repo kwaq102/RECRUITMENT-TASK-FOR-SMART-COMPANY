@@ -1,0 +1,29 @@
+.error__wrapper {
+	width: 100%;
+	min-height: 20vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	// TODO FLEX CENTER -> mixin
+}
+
+.error__wrapper__message {
+	width: 80%;
+	margin: 0 auto;
+	font-size: 2.2rem;
+	text-align: center;
+	letter-spacing: 2px;
+	color: white;
+	text-shadow: 2px 2px 5px $red;
+}
+
+@media screen and (min-width: map-get($breakpoints, l)) {
+	.error__wrapper {
+		min-height: 40vh;
+	}
+	.error__wrapper__message {
+		width: 60%;
+		font-size: 2.8rem;
+	}
+}
