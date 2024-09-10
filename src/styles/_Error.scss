@@ -1,11 +1,7 @@
 .error__wrapper {
+	@include flexCenter;
 	width: 100%;
 	min-height: 20vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	// TODO FLEX CENTER -> mixin
 }
 
 .error__wrapper__message {

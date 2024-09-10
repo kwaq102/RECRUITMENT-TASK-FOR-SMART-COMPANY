@@ -31,9 +31,7 @@ const TableUsers = () => {
 			const data = await res.data;
 			dispatch(fetchUsersSuccess(data));
 		} catch (e) {
-			console.log(error);
 			dispatch(fetchUsersFail("Error"));
-			// TODO oagarnąć obługę błędów w axios
 		}
 	};
 
@@ -41,7 +39,6 @@ const TableUsers = () => {
 		getUsers();
 	}, [dispatch]);
 
-	// TODO poszukać rozwiązania aby zrobić z tego jedną funkcję ?
 	const handleNameFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		dispatch(setFilterNameNick(e.target.value));
 	};

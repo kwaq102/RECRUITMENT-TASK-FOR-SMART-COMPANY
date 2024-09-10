@@ -3,7 +3,7 @@ import userReducer from '../features/userSilce';
 
 export const store = configureStore({
     reducer: {
-        users: userReducer, // Używamy userReducer z createSlice
+        users: userReducer,
     },
 });
 

@@ -36,9 +36,7 @@
 
 .footer__content__contact,
 .footer__content__socials {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	@include flexCenter;
 	flex-wrap: wrap;
 }
 

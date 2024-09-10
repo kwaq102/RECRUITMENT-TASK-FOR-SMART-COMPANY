@@ -34,7 +34,7 @@
 
 .tableUsers__body__cell--header {
 	@include sticky;
-	display: block; //TODO na fierefox nie działą display block :/ nie
+	display: block;
 	padding: 0.4em 0.8em;
 	background-color: #50515a;
 	border-right: $rightBorder;

@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { User, UsersState } from '../../Types/types';
 import { RootState } from '../store/store';
 
-
 const initialState: UsersState = {
     users: [],
     filterNameNick: '',
