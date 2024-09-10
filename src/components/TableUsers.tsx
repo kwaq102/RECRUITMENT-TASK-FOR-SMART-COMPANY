@@ -12,7 +12,7 @@ import {
 	setFilterUserName,
 } from "../redux/features/userSilce";
 import { TableSingleUser } from "./TebleSingleUser";
-import TableHeadUser from "./TableHeadUser";
+import { TableHeadUser } from "./TableHeadUser";
 
 const TableUsers = () => {
 	const dispatch: AppDispatch = useDispatch();
@@ -56,9 +56,9 @@ const TableUsers = () => {
 
 	const usersGenerate = () =>
 		users.map((user, i) => {
-			// TODO poszukać rozwiązania na wyświetlenie informacji że brak wyników... gdzieś poszukać info ze statu o braku useróws
 			return <TableSingleUser user={user} no={i + 1} key={user.id} />;
 		});
+
 	return (
 		<div className="tableUsers__wrapper">
 			<table className="tableUsers">

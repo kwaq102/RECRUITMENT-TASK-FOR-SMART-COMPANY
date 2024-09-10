@@ -17,4 +17,4 @@ const TableHeadUser = ({ handleFilter, text, placeholder }: Props) => {
 	);
 };
 
-export default TableHeadUser;
+export { TableHeadUser };

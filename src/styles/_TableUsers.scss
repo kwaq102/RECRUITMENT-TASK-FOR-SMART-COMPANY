@@ -9,6 +9,7 @@
 	width: 100%;
 	background-color: #50515a;
 	border-collapse: collapse;
+	border: 1px solid #000;
 }
 
 .tableUsers__head {
@@ -26,7 +27,7 @@
 	&:nth-of-type(1) {
 		@include sticky;
 		min-width: auto;
-		border-right: 1px solid #292929; //TODO Broder right 3 razy się powtazra np. .cell-borderdRight
+		border-right: $rightBorder;
 		background-color: #363636;
 	}
 }
@@ -36,7 +37,7 @@
 	display: block; //TODO na fierefox nie działą display block :/ nie
 	padding: 0.4em 0.8em;
 	background-color: #50515a;
-	border-right: 1px solid #292929;
+	border-right: $rightBorder;
 }
 
 .tableUsers__body__row:nth-of-type(2n) {
@@ -50,7 +51,7 @@
 .tableUsers__body__cell {
 	padding: 0.8em 1em;
 	font-size: 1.4rem;
-	border-right: 1px solid #292929;
+	border-right: $rightBorder;
 }
 
 @media screen and (min-width: map-get($breakpoints, l)) {
